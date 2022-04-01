@@ -10,7 +10,7 @@ function generatePassword(){
   var charList = writePassword();
   var genPass= "";
   for(i=0; i <= length; i++){
-    randomNum = Math.floor(Math.random() * length);
+    randomNum = Math.min(Math.floor(Math.random() * 100), charList.length - 1)
     genPass += charList[randomNum];
   }
   printPassword(genPass);
@@ -52,6 +52,7 @@ function writePassword() {
   if (UpperCaseChar === true){
     charList += passUpper;
   }
+  console.log(charList);
  return charList;
 }
 // console.log(writePassword());
